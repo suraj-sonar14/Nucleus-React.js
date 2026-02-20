@@ -1,0 +1,19 @@
+hello yaar new file is created
+
+1.In create file check for all arguuments passing to the parameter file name whether those have any extension or not , if not then by default add .txt;
+
+2.create a function to display the info about the file or directory.
+
+3.make sure that every file or directory is being created inside virtual root directory.
+
+4.file operations : 1) create file 
+                    2) edit file 
+                    3) info of the file 
+                    4) exist file 
+                    5) delete file
+                    6) rename  that file
+                    
+5. directory operations : 1)  create 
+                          2) delete
+                          3) update 
+                          4) rename

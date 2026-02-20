@@ -1,0 +1,131 @@
+<!-- Random Toss Picker -->
+
+<!DOCTYPE html>    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+         button{
+            height: 30px;
+            width:90px ;
+            margin-left: 50px;
+            border-radius: 5px;
+            font-size: 24px;
+         }
+
+        label
+        {
+            font-size: 17px;
+            font-weight:bold;
+        }
+
+        input[type="radio"]
+        {
+            margin: 0 10px;
+            transform: scale(1.6);
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <label for="team1">Enter Team 1 Name</label>
+    <input type="text" name="team1" id="team1">
+
+    
+     <br><br>
+
+    <label for="team2">Enter Team 2 Name</label>
+    <input type="text" name="team2" id="team2">
+
+    <br><br>
+  
+    <label for="choice_team">Enter team Name whose calling :</label>
+    <input type="text" name="choice_team" id="choice_team">
+
+    <br><br>
+
+    <label for="choice">Select Heads OR Tails</label>
+    
+    <br><br>
+     
+    
+    Tails<input type="radio" name="choice" value="Tails" id="choice">
+    Heads<input type="radio" name="choice" value="Heads" id="choice">
+
+    <br><br>
+
+    <button onclick="toss()">Toss</button>
+
+    <br><br>
+    
+    <h1 id="result"></h1>
+
+    <h1 id="sorry"></h1>
+
+    <script>
+
+            function toss()
+            {
+
+                var toss = ["Tails","Heads"];
+
+                var team1 = document.getElementById("team1").value;
+
+                var team2 = document.getElementById("team2").value;
+
+                var choice_team = document.getElementById("choice_team").value;
+
+                var choice = document.querySelector('input[name="choice"]:checked')?.value;
+
+                var index = Random(0,2);
+
+                var res = toss[index];
+
+                var un_choice;
+
+
+               if(choice_team==team1)
+               {
+                   un_choice = team2;
+                   choice_team = team1;
+               }
+               else
+               {
+                   un_choice = team1;
+                   choice_team = team2;
+
+               }
+
+                if(choice==res)
+               {
+                  document.getElementById("result").innerText = res +" , " + choice_team + "wins";
+                  document.getElementById("sorry").innerText = "sorry "+ un_choice + " Next Time";
+               }
+               else
+               {
+                  document.getElementById("result").innerText = res +"," + un_choice + "wins";
+                  document.getElementById("sorry").innerText = "sorry "+ choice_team + " Next Time";
+               }      
+            }
+
+            function Random(min,max)
+            {
+
+                var rand = Math.random() * max;
+
+                rand = Math.floor(rand);
+
+                return rand;
+
+           }
+       
+    </script>
+
+</body>
+</html>
