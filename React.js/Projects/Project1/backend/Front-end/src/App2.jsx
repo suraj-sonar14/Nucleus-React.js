@@ -19,13 +19,13 @@ function App()
           <List Name="Suraj" age={22} isStudent={true}></List>
           <List></List>
 
-          {   //Hooks in react
+          {   /*//Hooks in react
 
-              
+               1.useState();
 
        
 
-          }
+         */}
 
            <br />
            <br />
